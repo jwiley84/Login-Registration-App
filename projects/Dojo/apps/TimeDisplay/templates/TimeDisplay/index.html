@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'TimeDisplay/TimeDisplay.css' %}">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="boxy" id="label">
+            <p>The current time and date are (in GM time):</p>
+        </div>
+        <div class="boxy" id="TD">
+            {{ time }}
+        </div>
+    </div>
+</body>
+
+</html>
