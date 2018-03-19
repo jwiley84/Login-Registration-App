@@ -19,5 +19,9 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^time_display/', include ('apps.TimeDisplay.urls')),
-    url(r'^', include ('apps.TimeDisplay.urls'))
+    url(r'^', include ('apps.Amadon.urls')),
+    url(r'^RWG/', include ('apps.RWG.urls')),
+    url(r'^Survey/', include ('apps.Survey.urls')),
+    url(r'^RainbowWords/', include ('apps.RainbowWords.urls')),
+    url(r'^Amadon/', include ('apps.Amadon.urls'))
 ]

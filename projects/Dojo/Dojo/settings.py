@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.Amadon',
+    'apps.RainbowWords',
+    'apps.Survey',
+    'apps.RWG',
     'apps.TimeDisplay',
     'django.contrib.admin',
     'django.contrib.auth',
