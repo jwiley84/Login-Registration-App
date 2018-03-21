@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login and Registration</title>
+    <style>
+        .split {
+            width: 40%;
+            margin: auto;
+            border: 3px double black;
+            display: inline-block;
+            padding: 40px;
+            height: 300px;
+            vertical-align: top;
+        }
+        #container {
+            width: 970px;
+            background-color: rgb(130, 223, 226);
+            margin: auto;
+        }
+        #msgs {
+            background-color: pink;
+            border: 1px dashed red;
+        }
+        body {
+            height: 1000px;
+            background: linear-gradient(to bottom right, blue, blue, seagreen, lightseagreen, lightseagreen, white);
+        }
+        #rightsplit {
+            margin-left: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="split">
+            <form action='/register' method='POST'>
+                {% csrf_token %}
+                <h3>Register</h3>
+                <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
+                <p><label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
+                <p><label for="email">Email:<input type="text" name="email" id="email"></label>
+                <p><label for="birthday">Birthday(optional):<input type="date" name="birthday" id="birthday"></label>>
+                <p><label for="password">Password:<input type="password" name="password" id="password"></label>
+                <p><label for="conf">Confim Password:<input type="password" name="conf" id="conf"></label>
+                <p><input type="submit" value="Register">
+            </form>
+        </div>
+        <div class="split" id="rightsplit"> 
+            <form action='/login' method='POST'>
+                {% csrf_token %}
+                <h3>Login</h3>
+                <label for="email">Email:<input type="text" name="email" id="email"></label>
+                <p><label for="password">Password:<input type="password" name="password" id="password"></label>                
+                <p><input type="submit" value="Login">
+            </form>
+            {% if messages %}
+            <div id="msgs">
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li>{{ message }}
+                    {% endfor %}
+                </ul>    
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
